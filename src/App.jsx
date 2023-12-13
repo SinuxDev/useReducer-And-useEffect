@@ -11,7 +11,13 @@ const firstReducer = (state,action) =>{
         default:
           throw new Error();
     }
-}
+};
+
+const ACTION = {
+  PLUS : "plus",
+  MINUS : "minus",
+  UPDATE_KEY : "updateKey",
+};
 
 function App() {
   
@@ -19,15 +25,15 @@ function App() {
   
   return (
     <div className="App" >
-      <input type="text" onChange={(e) => dispatch({type : "updateKey", payload : e.target.value })} />
+      <input type="text" onChange={(e) => dispatch({type : ACTION.UPDATE_KEY , payload : e.target.value })} />
 
       <h1> Your key is - {state.key}    </h1>
 
-      <button onClick={ () => dispatch({type : "minus"}) } >-</button>
+      <button onClick={ () => dispatch({type : ACTION.MINUS })} >-</button>
 
       <span> {state.count} </span>
 
-      <button onClick={ () => dispatch({type : "plus"}) } >+</button>
+      <button onClick={ () => dispatch({type : ACTION.PLUS  })} >+</button>
 
     </div>
   );
