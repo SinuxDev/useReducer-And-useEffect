@@ -10,9 +10,16 @@ function App() {
         setKey(e.target.value);
       }} />
       <h1> Your key is -  {key}  </h1>
-      <button>-</button>
+
+      <button onClick={()=>{
+        setCount((prev)=> prev - 1);
+      }} >-</button>
+
       <span> {count} </span>
-      <button>+</button>
+
+      <button onClick={()=>{
+        setCount((prev)=> prev + 1);
+      }} >+</button>
     </div>
   );
 }
