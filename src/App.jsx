@@ -29,7 +29,9 @@ function App() {
                   <tr key={todo.id} >
                     <td> {todo.id} </td>
                     <td> {todo.title} </td>
-                    <td> {todo.completed} </td>
+                    {
+                      todo.completed ? (<td>Done</td>) : (<td>None</td>)
+                    }
                   </tr>
                 ))
               }
