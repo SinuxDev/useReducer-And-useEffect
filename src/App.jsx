@@ -2,16 +2,17 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [key,setKey] = useState("");
-  useEffect(()=>{
-    console.log("I'm useEffect Hooks");
-  },[]);
-
+  const [count,setCount] = useState(0);
+  
   return (
-    <div>
-      <h1> Your key is -  {key}  </h1>
+    <div className="App" >
       <input type="text" onChange={(e)=>{
         setKey(e.target.value);
       }} />
+      <h1> Your key is -  {key}  </h1>
+      <button>-</button>
+      <span> {count} </span>
+      <button>+</button>
     </div>
   );
 }
